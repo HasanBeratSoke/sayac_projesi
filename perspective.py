@@ -17,11 +17,12 @@ hsv_img = cv.cvtColor(img, cv.COLOR_BGR2HSV)  # convert to hsv
 blur = cv.GaussianBlur(hsv_img, (5, 5), 0)  # blur
 mask = cv.inRange(blur, lower_green, upper_green)  # mask
 
-
+#threshold image and contour
 _, threshold = cv.threshold(mask, 0, 255, cv.THRESH_BINARY)  # threshold
 contours = cv.findContours(threshold, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)  # find contours
 contours = sorted(contours[0], key=cv.contourArea, reverse=True)  # sort contours
 
+#yeşil noktaların koordinatlarını tutulduğu liste
 arr = np.array(NULL)  # array
 
 for i in contours[:4]:  # find 4 largest contours
