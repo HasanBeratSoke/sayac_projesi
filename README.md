@@ -1,2 +1,2 @@
 # sayac_projesi
- Anlık fatura takibi
+ esp-32 cam ile görüntü işleme kullanarak anlık fatura takibi
